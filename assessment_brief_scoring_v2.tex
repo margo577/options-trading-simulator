@@ -1,0 +1,212 @@
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+urlcolor=blue,
+citecolor=blue
+}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Options Trading Simulator Coursework Brief}}\\[0.4em]
+{\large ECO3044 Derivatives Markets}\\[0.4em]
+{\large Student Assessment Guidance}
+\end{center}
+
+\hrule
+\vspace{1em}
+
+\section*{1. Overview}
+
+This coursework uses the online \textbf{Options Trading Workflow Simulator}. You will complete multiple simulated trading sessions in which you manage a portfolio of stock options under changing market conditions.
+
+The assessment is designed to test your ability to:
+\begin{itemize}[leftmargin=1.5em]
+\item interpret the option chain in a coherent way
+\item respond intelligently to changes in implied volatility
+\item control portfolio risk exposures
+\item maintain an appropriate directional position
+\item reflect on the quality of your decisions
+\end{itemize}
+
+\section*{2. What You Must Submit}
+
+You must submit:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Four completed simulator sessions}
+\item \textbf{A short written rationale} (submitted separately on SurreyLearn)
+\end{enumerate}
+
+\textbf{Important rule:} your four selected sessions must contain \textbf{at least two different scenarios}.
+
+\section*{3. Core Session Requirements}
+
+Each selected session must satisfy the following two requirements:
+
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Exactly 10 trades} must be completed.
+\item \textbf{Both calls and puts} must be used during the session.
+\end{enumerate}
+
+These two items are treated as \textbf{requirements}, not as scored components. A session that fails either requirement may be saved for practice, but should not be selected for final submission.
+
+\section*{4. Scoring Structure}
+
+Each valid session is scored out of \textbf{100} using the following weights:
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+\textbf{Component} & \textbf{Weight} \\
+\midrule
+P\&L performance & 20 \\
+Volatility response & 35 \\
+Risk control & 35 \\
+Target fit & 10 \\
+\midrule
+\textbf{Total} & \textbf{100} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{4.1 P\&L Performance (20 marks)}
+
+This component rewards overall trading outcome, but it is not the dominant part of the mark.
+
+A very strong positive outcome will score highly, while a poor outcome will score less well. However, this assessment is \textbf{not} simply about making money. A profitable session with weak volatility handling or poor risk control may still score less well than a session with more disciplined management.
+
+\subsection*{4.2 Volatility Response (35 marks)}
+
+This is one of the two most important parts of the assessment.
+
+The simulator changes volatility during the session. Your score depends on how well your subsequent trades respond to those volatility changes. In particular, the system evaluates whether your portfolio's exposure to volatility (\textit{Vega}) is adjusted in a sensible direction after volatility shocks.
+
+This component therefore rewards:
+\begin{itemize}[leftmargin=1.5em]
+\item recognising that implied volatility has changed
+\item adjusting the portfolio rather than ignoring the new environment
+\item making responses that are directionally sensible rather than random
+\end{itemize}
+
+\subsection*{4.3 Risk Control (35 marks)}
+
+This is the other major component of the assessment.
+
+Risk control is based on the final portfolio exposures, especially \textit{Gamma} and \textit{Vega}. A strong session will not merely chase profit; it will finish with a portfolio whose risk characteristics remain appropriately controlled.
+
+This component rewards:
+\begin{itemize}[leftmargin=1.5em]
+\item avoiding excessive Gamma exposure
+\item avoiding excessive Vega exposure
+\item maintaining control rather than allowing the portfolio to drift into unstable positions
+\end{itemize}
+
+\subsection*{4.4 Target Fit (10 marks)}
+
+This final component checks whether the portfolio finishes with an appropriate directional exposure.
+
+The simulator is designed so that your final Delta should lie in the target region associated with the task. This part matters, but it carries less weight than volatility response and risk control. The reason is simple: the central aim of the coursework is not merely to finish with the ``correct'' directional sign, but to manage a live option portfolio intelligently as conditions change.
+
+\section*{5. Interpretation of the Weights}
+
+The marking structure is deliberately designed so that:
+\begin{itemize}[leftmargin=1.5em]
+\item \textbf{P\&L matters}, but it does not dominate the mark
+\item \textbf{volatility response matters greatly}, because this is a central learning objective
+\item \textbf{risk control matters greatly}, because disciplined portfolio management is essential
+\item \textbf{target fit matters}, but only as a smaller part of the total mark
+\end{itemize}
+
+In other words, a student should not score highly simply because the market happened to move in their favour. Strong marks require evidence of judgement, adaptation, and control.
+
+\section*{6. Worked Example of a Stronger Session}
+
+\subsection*{Scenario B: Softer Market with Mixed Volatility}
+
+Initial conditions:
+\begin{itemize}[leftmargin=1.5em]
+\item Share price = 92
+\item Implied volatility = 22\%
+\item Outlook uncertain, with some downside risk
+\end{itemize}
+
+\subsection*{Illustrative trade sequence}
+
+\begin{longtable}{>{\raggedright}p{1.2cm} >{\raggedright}p{4.8cm} >{\raggedright\arraybackslash}p{8.2cm}}
+\toprule
+Trade & Action & Why it may be sensible \\
+\midrule
+1 & Buy Put 90 & Establish downside exposure. \\
+2 & Sell Call 100 & Earn premium while keeping a bearish-to-neutral tilt. \\
+3 & Volatility rises & Student recognises that Vega exposure now matters more. \\
+4 & Reduce part of Put position & Locks in some gain and reduces volatility sensitivity. \\
+5 & Buy Call 95 & Provides some protection if the market rebounds. \\
+6 & Market weakens again & The student reassesses exposures rather than simply holding everything. \\
+7 & Close short Call & Removes upside risk if conditions begin to change. \\
+8 & Add Put 85 & Reintroduce downside convexity in a controlled way. \\
+9 & Trim downside exposure again & Realise gains and avoid overexposure. \\
+10 & Finish with controlled book & End with balanced final risk. \\
+\bottomrule
+\end{longtable}
+
+\subsection*{Why this may score well}
+
+This type of session may score well because:
+\begin{itemize}[leftmargin=1.5em]
+\item it uses both calls and puts
+\item it completes exactly 10 trades
+\item it reacts to volatility rather than ignoring it
+\item it keeps risk exposures under control
+\item it does not rely purely on one directional bet
+\end{itemize}
+
+\section*{7. Written Rationale}
+
+Submit a short commentary (recommended 800--1200 words) explaining:
+\begin{itemize}[leftmargin=1.5em]
+\item why you selected your final four sessions
+\item how you interpreted each scenario
+\item how volatility affected your choices
+\item examples of successful or unsuccessful trades
+\item what you learned from repeated attempts
+\item how Delta, Gamma, and Vega influenced decisions
+\end{itemize}
+
+\section*{8. Practical Advice}
+
+\begin{itemize}[leftmargin=1.5em]
+\item Practise before selecting final submissions.
+\item Save multiple attempts.
+\item Compare sessions across more than one scenario.
+\item Focus on adaptation and portfolio control, not just short-run profit.
+\item Use the same browser/device if instructed.
+\item Do not leave all attempts until the deadline.
+\end{itemize}
+
+\section*{9. Final Encouragement}
+
+This assessment rewards thoughtful experimentation, reflection, and improving judgement. You are not expected to predict markets perfectly. You are expected to make reasoned decisions under uncertainty and to respond intelligently when volatility conditions change.
+
+\vspace{1em}
+\hrule
+\vspace{0.5em}
+
+\begin{center}
+\textit{Good luck, and use practice sessions wisely.}
+\end{center}
+
+\end{document}
